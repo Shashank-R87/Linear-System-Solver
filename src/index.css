@@ -1,0 +1,231 @@
+body {
+  font-family: "Poppins";
+}
+
+.container_1{
+  position: absolute;
+  background-color: #fff;
+  border-radius: 10px;
+  height: 550px;
+  width: 414px;
+  margin: -8px -8px -8px -8px;
+}
+
+.draggable{
+	position: absolute;
+  width: 206px;
+  height: 10px;
+  background-color: #70707040;
+  border-radius: 0px 0px 10px 10px;
+	top: 0;
+	left: 100px;
+	-webkit-app-region: drag;
+	cursor: move;
+}
+
+.exit{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.exit:hover{
+  transform: scale(102%);
+}
+
+.exit:active{
+  transform: scale(92%);
+}
+
+.howbtn{
+  position: absolute;
+  top: 100px;
+  left: 100px;
+}
+
+.heading_1{
+  position: absolute;
+  font-size: 20px;
+  font-weight: 800;
+  color: #2B2D42;
+  top: 81px;
+  left: 50px;
+  user-select: none;
+}
+
+.heading_2{
+  position: absolute;
+  font-size: 42px;
+  font-weight: 900;
+  color: #000000;
+  top: 99px;
+  left: 50px;
+  user-select: none;
+}
+
+.heading_3{
+  position: absolute;
+  font-size: 22px;
+  color: #2B2D42;
+  font-weight: italic;
+  top: 147px;
+  left: 50px;
+  user-select: none;
+}
+
+.heading_4{
+  position: absolute;
+  font-size: 34px;
+  font-weight: 700;
+  color: #000;
+  top: 134px;
+  left: 78px;
+  user-select: none;
+}
+
+.line_1{
+  position: absolute;
+  top: 60px;
+  left: 50px;
+  transition: all 0.2s ease-in-out;
+}
+
+.line_1:hover{
+  transform: scale(102%);
+}
+
+.unknowns{
+  position: absolute;
+  border: none;
+  outline: none;
+  border: 1px solid #8D99AE;
+  border-radius: 5px;
+  top: 260px;
+  left: 72px;
+  width: 270px;
+  height: 30px;
+  font-family: "Poppins";
+  font-size: 13px;
+  color: #8D99AE;
+  font-weight: 500;
+  padding-left: 15px;
+  transition: all 0.2s ease-in-out;
+}
+
+input[type = "text"]::placeholder{
+	font-family: "Poppins";
+	color: #8D99AE;
+	font-weight: 500;
+	font-size: 13px;
+  user-select: none;
+}
+
+input[type = "text"]:focus{
+  border-color: #000;
+  color: #000;
+}
+
+input[type = "text"]:hover{
+  border-color: #000;
+}
+
+.continue{
+  position: absolute;
+  border: none;
+  outline: none;
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: 13px;
+  color: #fff;
+  width:  90px;
+  height: 30px;
+  background-color: #000;
+  border-radius: 5px;
+  top: 316px;
+  left: 162px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  overflow: hidden;
+}
+
+.continue:hover{
+  transform: scale(101%);
+}
+
+input[type="button"]:active{
+  transform: scale(98%);
+}
+
+.order{
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: 380px;
+  left: 157px;
+  background-color: #000;
+  border-radius: 10px;
+}
+
+.order1{
+  padding-top: 23px;
+  display: flex;
+  justify-content: center;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  font-family: "Montserrat";
+  user-select: none;
+}
+
+.order2{
+  padding-top: 5px;
+  display: flex;
+  justify-content: center;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  font-family: "Montserrat";
+  user-select: none;
+}
+
+.x{
+  position: absolute;
+  color: #F8F32B;
+  font-size: 10px;
+  font-weight: 600;
+  font-family: "Montserrat";
+  top: 43px;
+  left: 47px;
+  user-select: none;
+}
+
+.howbtn{
+  user-select: none;
+  position: absolute;
+  top: 514px;
+  left: 20px;
+  font-family: "Montserrat";
+  font-size: 13px;
+  font-weight: 400px;
+  color: #8D99AE;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.howbtn:hover,.disclaimer:hover{
+  color: #000;
+}
+
+.disclaimer{
+  user-select: none;
+  font-family: "Poppins";
+  font-size: 10px;
+  font-weight: 400;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  color: #8D99AE;
+  transition: all 0.2s ease-in-out;
+}

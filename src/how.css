@@ -1,0 +1,47 @@
+body {
+  font-family: "Poppins";
+}
+
+.container_1 {
+  position: absolute;
+  background-color: #fff;
+  border-radius: 10px;
+  height: 550px;
+  width: 414px;
+  margin: -8px -8px -8px -8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content{
+  user-select: none;
+}
+
+.draggable {
+  position: absolute;
+  width: 206px;
+  height: 10px;
+  background-color: #70707040;
+  border-radius: 0px 0px 10px 10px;
+  top: 0;
+  left: 100px;
+  -webkit-app-region: drag;
+  cursor: move;
+}
+
+.exit {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.exit:hover {
+  transform: scale(102%);
+}
+
+.exit:active {
+  transform: scale(92%);
+}

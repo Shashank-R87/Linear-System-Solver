@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="index.css" />
+    <style> @import url('https://fonts.googleapis.com/css2?family=Chivo+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:wght@100;300;400;500;600;700;800;900&display=swap'); </style>
+  </head>
+  <body>
+    <div class="container_1">
+      <div class="draggable"></div>
+      <svg id="exit" class="exit" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+        <g id="Iconly_Bold_Close-Square" data-name="Iconly/Bold/Close-Square" transform="translate(-2 -1.999)">
+          <g id="Close-Square" transform="translate(2 1.999)">
+            <path id="Path_3" data-name="Path 3" d="M14.34,0C17.73,0,20,2.38,20,5.92h0v8.171C20,17.621,17.73,20,14.34,20H5.67C2.28,20,0,17.621,0,14.091H0V5.92C0,2.38,2.28,0,5.67,0h8.67ZM13.01,6.971a.879.879,0,0,0-1.24,0h0L10,8.75,8.22,6.971A.876.876,0,1,0,6.98,8.21h0L8.76,9.991l-1.78,1.77A.88.88,0,0,0,6.98,13a.889.889,0,0,0,.62.261A.872.872,0,0,0,8.22,13h0L10,11.231,11.78,13a.823.823,0,0,0,.61.261.876.876,0,0,0,.62-1.49h0l-1.78-1.78L13.01,8.21A.88.88,0,0,0,13.01,6.971Z"/>
+          </g>
+        </g>
+      </svg>      
+      <svg class="line_1" xmlns="http://www.w3.org/2000/svg" width="319" height="146" viewBox="0 0 319 146">
+        <g id="MeatBall1" transform="translate(-50 -29)" style="isolation: isolate">
+          <circle id="Ellipse_1" data-name="Ellipse 1" cx="31.5" cy="31.5" r="31.5" transform="translate(50 112)" fill="#f8f32b"/>
+          <circle id="Ellipse_3" data-name="Ellipse 3" cx="19.5" cy="19.5" r="19.5" transform="translate(113 37)" fill="#f8f32b"/>
+          <circle id="Ellipse_2" data-name="Ellipse 2" cx="64" cy="64" r="64" transform="translate(241 29)" fill="#f8f32b"/>
+          <path id="MetaballShape1" d="M101.369,167.943c38.027-30.911,86.575-57.41,177.382-16.574L256.205,51.587c-64.428,75.912-119.653,72.86-167.275,61.3Z" fill="#f8f32b"/>
+          <path id="MetaballShape1-2" data-name="MetaballShape1" d="M112.844,140.365c-4.537-45.366,6.27-52.28,30.1-67.4L113.029,55.429c-1.55,28.181-2.3,40.988-44.106,59.19Z" fill="#f8f32b"/>
+          <path id="MetaballShape1-3" data-name="MetaballShape1" d="M273.788,37.127c-86.923,48.558-105.235,20.254-130.346,3.232L135.966,75.69c29.854-5.391,58.061-23.853,117.866,55.752Z" fill="#f8f32b"/>
+        </g>
+      </svg>
+      <h class="heading_1">Calculate</h>
+      <h class="heading_2">Linear System</h>
+      <h class="heading_3">of</h>
+      <h class="heading_4">Equations</h> 
+    </div>
+    <div class="container_2">
+      <input id="unknowns" class="unknowns" type="text" placeholder="Enter number of unknows*">
+      <input id="continue" class="continue" type="button" value="Continue">
+      <div class="order">
+        <h id="order1" class="order1">0</h>
+        <h class="x">x</h>
+        <h class="order2" id="order2">0</h>
+      </div>
+    </div>
+    <h class="howbtn" id="howbtn">How?</h>
+    <h class="disclaimer">
+      *unknowns-max 10 for good ui experience
+    </h>
+  </body>
+  <script type="module">
+    const {ipcRenderer} = require('electron');
+
+    function shareData(){
+        ipcRenderer.send("msg","Child Windows Open")
+    }
+
+    function changetemplate(){
+      ipcRenderer.send("msg1","How Window is Open")
+    }
+
+    var exitEl = document.getElementById("exit");
+    exitEl.addEventListener("click", function(){
+      window.close();
+    })
+
+    var row_displayEl = document.getElementById("order1");
+    var column_displayEl = document.getElementById("order2");
+
+    var continue_button = document.getElementById("continue");
+    var unknowns = document.getElementById("unknowns");
+
+    window.onload = function(){
+      function syncronize(){
+        row_displayEl.innerHTML = unknowns.value;
+        column_displayEl.innerHTML = unknowns.value;
+      }
+
+      function value_change(){
+        unknowns.addEventListener('input',syncronize);
+      }
+      syncronize();
+      value_change();
+    }
+
+    continue_button.addEventListener("click", function() {
+      window.localStorage.setItem("unknowns",unknowns.value);
+      shareData();
+    });
+
+    var howbtn = document.getElementById("howbtn");
+    howbtn.addEventListener("click",function(){
+      changetemplate();
+    })
+
+  </script>
+</html>
