@@ -13,9 +13,11 @@ const createChildWindow = () => {
     height: 800,
     frame: false,
     resizable: false,
+    openDevTools:false,
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false,
+      devTools:false,
     },
   })
   childWindow.loadFile(path.join(__dirname, 'matrix.html'))
@@ -29,9 +31,11 @@ const createHowWindow = () => {
     frame: false,
     transparent: true,
     resizable: false,
+    openDevTools:false,
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false,
+      devTools:false,
     },
   })
   HowWindow.loadFile(path.join(__dirname, 'how.html'))
@@ -54,9 +58,11 @@ var createWindow = () => {
     frame: false,
     transparent: true,
     resizable: false,
+    openDevTools: false,
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false,
+      devTools: false,
     },
   });
 

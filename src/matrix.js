@@ -35,7 +35,7 @@ function getMatrix(){
 
     container1.classList.add("block");
     loader.classList.add("show");
-    fetch("https://linalgsolve.up.railway.app/solver/"+JSON.stringify(matt1)+"/"+JSON.stringify(matt2))
+    fetch("https://linalgsolve.vercel.app/solver/"+JSON.stringify(matt1)+"/"+JSON.stringify(matt2))
     .then(res=>{
         if (res.ok){
             return res.json()
