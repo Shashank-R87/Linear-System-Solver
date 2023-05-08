@@ -1,2 +1,2 @@
 # Linear-System-Solver
-Link to exe: https://mega.nz/file/O49SDLTa#4RUpz6sN8f7xOmAEk2SyE1DiYBQ9OpgppQaZWBVlKno
+![linear_systems_solver](https://user-images.githubusercontent.com/95744775/236834771-481d71c6-7a6e-4eb3-99a5-cbaf49de4d4f.png)
